@@ -1,10 +1,24 @@
-
 // =========================================
 // EDUSIM - SISTEMA DE ACCESO
 // =========================================
 
-// Contraseña inicial
-const PASSWORD = "123";
+// Lista de contraseñas válidas:
+// - 2 contraseñas solicitadas: "spidey", "mey"
+// - 10 contraseñas con 2 letras mayúsculas iniciales + 5 números
+const PASSWORDS_VALIDAS = [
+    "spidey",
+    "mey",
+    "AB10482",
+    "CM39215",
+    "DG74810",
+    "EF51924",
+    "GH83019",
+    "JK26473",
+    "LM90518",
+    "NP61742",
+    "QR45829",
+    "ST72936"
+];
 
 // Elementos HTML
 const loginForm = document.getElementById("loginForm");
@@ -39,7 +53,7 @@ loginForm.addEventListener("submit", (event) => {
 
     const enteredPassword = passwordInput.value;
 
-    if (enteredPassword === PASSWORD) {
+    if (PASSWORDS_VALIDAS.includes(enteredPassword)) {
 
         // Guardar sesión de acceso
         sessionStorage.setItem("edusim_access", "true");
